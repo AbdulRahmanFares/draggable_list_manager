@@ -1,7 +1,7 @@
 import 'package:draggable_list_manager/constants.dart';
+import 'package:draggable_list_manager/screens/edit_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class MyDraggableList extends StatefulWidget {
   const MyDraggableList({super.key});
@@ -41,30 +41,8 @@ class _MyDraggableListState extends State<MyDraggableList> {
       showDialog(
         context: context,
         builder: (BuildContext context) {
-          TextEditingController controller = TextEditingController(text: myList[index]);
 
-          return AlertDialog(
-            backgroundColor: obj.whiteShade,
-            content: SizedBox(
-              height: screenHeight * 0.3,
-              width: screenWidth * 0.675,
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: screenHeight * 0.02
-                  ),
-                  Text(
-                    "Please enter the name",
-                    style: GoogleFonts.poppins(
-                      fontSize: screenWidth * 0.04,
-                      color: Colors.black54,
-                      letterSpacing: 1
-                    )
-                  )
-                ]
-              )
-            )
-          );
+          return EditDialog(myList: myList, index: index);
         }
       );
     }
@@ -93,7 +71,7 @@ class _MyDraggableListState extends State<MyDraggableList> {
             ),
             Center(
               child: SizedBox(
-                height: screenHeight * 0.73,
+                height: screenHeight * 0.745,
                 width: screenWidth * 0.8,
                 child: ListView.builder(
                   scrollDirection: Axis.vertical,
@@ -160,7 +138,7 @@ class _MyDraggableListState extends State<MyDraggableList> {
         ),
         bottomNavigationBar: Container(
           margin: EdgeInsets.only(
-            top: screenHeight * 0.02,
+            top: screenHeight * 0.007,
             bottom: screenHeight * 0.02
           ),
           height: screenHeight * 0.09,

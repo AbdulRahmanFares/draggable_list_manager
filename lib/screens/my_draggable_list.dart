@@ -49,6 +49,7 @@ class _MyDraggableListState extends State<MyDraggableList> {
 
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: obj.whiteShade,
         appBar: AppBar(
           backgroundColor: obj.darkBlue,
